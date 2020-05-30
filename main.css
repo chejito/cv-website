@@ -1,0 +1,15 @@
+*{
+    color: blue;
+}
+p{
+    color: red;
+}
+body{
+    display: flex;    
+}
+aside{
+    flex-grow: 1;
+}
+main{
+    flex-grow: 2;
+}
