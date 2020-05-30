@@ -1,15 +1,23 @@
 *{
-    color: blue;
+    font-family: "Lato Regular", Helvetica, sans-serif ;
+    color: rgb(0, 0, 0);
 }
-p{
-    color: red;
-}
+
 body{
+    margin-left: auto;
+    margin-right: auto;
+    width: 210mm;
     display: flex;    
 }
+
 aside{
+    padding: 20px;
+    background-color: rgb(100, 138, 196);
     flex-grow: 1;
 }
+
 main{
-    flex-grow: 2;
+    padding: 20px;
+    background-color: beige;
+    flex-grow: 3;
 }
