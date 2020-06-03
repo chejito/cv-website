@@ -11,6 +11,16 @@ h2{
     
 }
 
+.img-container {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+}
+.image{
+    vertical-align: middle;
+}
+
 body{    
     margin-left: auto;
     margin-right: auto;
