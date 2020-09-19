@@ -39,3 +39,7 @@ main{
     padding: 20px;    
     flex-grow: 3;
 }
+
+a{
+    font-size: large;
+}
