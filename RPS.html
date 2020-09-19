@@ -10,30 +10,30 @@
         function computerPlay(){
             let num = Math.floor(Math.random() * 3);
             if (num == 1){
-                return 'rock';
+                return 'piedra';
             } else if (num == 2){
-                return 'paper';
+                return 'papel';
             }else {
-                return 'scissors'
+                return 'tijera'
             }
         }
 
         function playRound(playerSelection, computerSelection) {
 
-            let tie = "Tie! Nobody wins (" + playerSelection + " vs " + computerSelection + ")";
-            let won = "You Won! " + playerSelection + " beats " + computerSelection;
-            let lose = "You Lose! " + computerSelection + " beats " + playerSelection;
+            let tie = "¡Empate! Nadie gana (" + playerSelection + " contra " + computerSelection + ")";
+            let won = "¡Ganaste! " + playerSelection + " vence a " + computerSelection;
+            let lose = "¡Perdiste! " + computerSelection + " vence a " + playerSelection;
             if (playerSelection != computerSelection) {
-                if (playerSelection == "rock") {
-                    if (computerSelection == "scissors") {
+                if (playerSelection == "piedra") {
+                    if (computerSelection == "tijera") {
                         playerWins += 1;
                         return won;
                     } else {
                         computerWins += 1;
                         return lose;
                     }              
-                } else if (playerSelection == "paper") {
-                    if (computerSelection == "scissors") {
+                } else if (playerSelection == "papel") {
+                    if (computerSelection == "tijera") {
                         computerWins += 1;
                         return lose;
                     } else {
@@ -41,7 +41,7 @@
                         return won;
                     }                
                 } else {
-                    if (computerSelection == "rock") {
+                    if (computerSelection == "piedra") {
                         computerWins += 1;
                         return lose;
                     } else {
@@ -59,23 +59,23 @@
 
         function game() {            
             for (let i = 0; i < 5; i++){
-                let playerSelection = prompt("Enter Rock/Paper/Scissors to play (" + (5-i) + " chances of 5 left): ").toLowerCase();                
+                let playerSelection = prompt("Introduce Piedra/Papel/Tijera para jugar (" + (5-i) + " de 5 intentos restantes): ").toLowerCase();                
                 let computerSelection = computerPlay();
-                console.log("Computer played " + computerSelection);
+                console.log("Máquina jugó " + computerSelection);
                 console.log(playRound(playerSelection, computerSelection));
             }
         }
 
         game();
 
-        let finalResult = " " + playerWins + " points - " + computerWins + " points"
+        let finalResult = " " + playerWins + " puntos - " + computerWins + " puntos"
 
         if (playerWins > computerWins) {
-            alert("You won!" + finalResult);
+            alert("¡Ganaste!" + finalResult);
         } else if (playerWins < computerWins) { 
-            alert("You lose!" + finalResult);
+            alert("¡Perdiste!" + finalResult);
         } else {
-            alert("You got a tie!" + finalResult);
+            alert("¡Teneis un empate!" + finalResult);
         }
                 
     </script>
