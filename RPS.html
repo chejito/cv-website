@@ -61,21 +61,21 @@
             for (let i = 0; i < 5; i++){
                 let playerSelection = prompt("Introduce Piedra/Papel/Tijera para jugar (" + (5-i) + " de 5 intentos restantes): ").toLowerCase();                
                 let computerSelection = computerPlay();
-                console.log("Máquina jugó " + computerSelection);
-                console.log(playRound(playerSelection, computerSelection));
+                alert("Máquina jugó " + computerSelection + "\n"
+                        + playRound(playerSelection, computerSelection));
             }
         }
 
         game();
 
-        let finalResult = " " + playerWins + " puntos - " + computerWins + " puntos"
+        let finalResult = " Tú: " + playerWins + " puntos - Máquina: " + computerWins + " puntos"
 
         if (playerWins > computerWins) {
-            alert("¡Ganaste!" + finalResult);
+            alert("¡Ganaste!\n" + finalResult);
         } else if (playerWins < computerWins) { 
-            alert("¡Perdiste!" + finalResult);
+            alert("¡Perdiste!\n" + finalResult);
         } else {
-            alert("¡Teneis un empate!" + finalResult);
+            alert("¡Teneis un empate!\n" + finalResult);
         }
                 
     </script>
