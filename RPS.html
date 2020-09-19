@@ -20,48 +20,64 @@
 
         function playRound(playerSelection, computerSelection) {
 
-            let tie = "Tie! Nobody wins (" + playerSelection + " VS " + computerSelection + ")";
+            let tie = "Tie! Nobody wins (" + playerSelection + " vs " + computerSelection + ")";
             let won = "You Won! " + playerSelection + " beats " + computerSelection;
             let lose = "You Lose! " + computerSelection + " beats " + playerSelection;
-            
-            if (playerSelection == "rock") {
-                if (computerSelection == "scissors") {
-                    return won;
-                } else if (computerSelection == "paper") {
-                    return lose;
+            if (playerSelection != computerSelection) {
+                if (playerSelection == "rock") {
+                    if (computerSelection == "scissors") {
+                        playerWins += 1;
+                        return won;
+                    } else {
+                        computerWins += 1;
+                        return lose;
+                    }              
+                } else if (playerSelection == "paper") {
+                    if (computerSelection == "scissors") {
+                        computerWins += 1;
+                        return lose;
+                    } else {
+                        playerWins += 1;
+                        return won;
+                    }                
                 } else {
-                    return tie;
-                }                
-            } else if (playerSelection == "paper") {
-                if (computerSelection == "scissors") {
-                    return lose;
-                } else if (computerSelection == "rock") {
-                    return won;
-                } else {
-                    return tie;
-                }                
+                    if (computerSelection == "rock") {
+                        computerWins += 1;
+                        return lose;
+                    } else {
+                        playerWins += 1;
+                        return won;
+                    }                
+                }
             } else {
-                if (computerSelection == "rock") {
-                    return lose;
-                } else if (computerSelection == "paper") {
-                    return won;
-                } else {
-                    return tie;
-                }                
+                return tie;
             }
         }
+            
+        let playerWins = 0;
+        let computerWins = 0;
 
         function game() {            
             for (let i = 0; i < 5; i++){
-                let playerSelection = prompt("Enter (Rock/Paper/Scissors): "); 
-                playerSelection = playerSelection.toLowerCase();
+                let playerSelection = prompt("Enter Rock/Paper/Scissors to play (" + (5-i) + " chances of 5 left): ").toLowerCase();                
                 let computerSelection = computerPlay();
+                console.log("Computer played " + computerSelection);
                 console.log(playRound(playerSelection, computerSelection));
             }
-        } 
-        
+        }
+
         game();
-        
+
+        let finalResult = " " + playerWins + " points - " + computerWins + " points"
+
+        if (playerWins > computerWins) {
+            alert("You won!" + finalResult);
+        } else if (playerWins < computerWins) { 
+            alert("You lose!" + finalResult);
+        } else {
+            alert("You got a tie!" + finalResult);
+        }
+                
     </script>
 </body>
 </html>
