@@ -8,7 +8,7 @@ let computerWins = 0;
 let games = 0;
 
 function computerPlay(){
-    const options = ['rock', 'paper', 'scissors'];
+    const options = ['piedra', 'papel', 'tijeras'];
     return options[Math.floor(Math.random() * 3)];
 }
 
@@ -16,8 +16,8 @@ function playRound(playerSelection, computerSelection) {
     const para = document.createElement('p');
 
     if (playerSelection != computerSelection) {
-        if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") ||
-                    (playerSelection == "scissors" && computerSelection == "paper")){            
+        if ((playerSelection == "piedra" && computerSelection == "tijeras") || (playerSelection == "papel" && computerSelection == "piedra") ||
+                    (playerSelection == "tijeras" && computerSelection == "papel")){            
                 playerWins += 1;                
                 para.textContent = "¡Ganas! " + playerSelection + " vence a " + computerSelection;
                 result.appendChild(para);
@@ -62,7 +62,7 @@ function showWinner(){
         });
         playerWins = 0;
         computerWins = 0;
-        games = 0;
+        games = 0;        
         while (result.firstChild) {
             result.removeChild(result.lastChild);
         }
@@ -72,6 +72,7 @@ function showWinner(){
         while (reset.firstChild) {
             reset.removeChild(reset.lastChild);
         }
+        updateScore();
     });
     reset.appendChild(buttonReset);
 }
