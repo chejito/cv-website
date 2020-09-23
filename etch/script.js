@@ -58,7 +58,7 @@ function getAlpha(cell) {
 }
 
 function reset(){
-    const tiles = prompt('How many tiles would you like to have?');    
+    const tiles = prompt('¿Cuántas baldosas quieres que haya por fila y columna?');    
     const tileSize = 960 / tiles;
     while (container.firstChild) {
         container.removeChild(container.lastChild);
