@@ -10,7 +10,8 @@ h1{
     border-bottom-color: black;
     border-bottom: 1px;
     border-bottom-style: solid;
-    
+    font-size: 40px;
+    text-align: center;
 }
 
 body{    
@@ -36,3 +37,14 @@ a{
     font-size: 30px;
     margin: 10px;
 }
+
+.nav li {
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: top;
+}
+
+.nav li:last-child {
+    margin-right: 0;
+}
+  
